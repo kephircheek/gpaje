@@ -1,0 +1,5 @@
+google-auth>=2.40.3
+google_auth_oauthlib>=1.2.2
+google-auth-httplib2
+fastapi>=0.116.1
+requests>=2.32.5

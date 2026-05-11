@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jsonify Google Albums</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header>
+    <div class="top-right">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="ru" id="lang-ru">Рус</button>
+        <button class="lang-btn active" data-lang="en" id="lang-en">Eng</button>
+      </div>
+      <div id="userBox" style="position:relative;">
+        <div id="user" class="user" style="display:none;">
+          <img id="userPic" alt="user" src="_blank"/>
+          <span id="userName"></span>
+        </div>
+        <div id="menu" class="menu">
+          <button id="signoutBtn"></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="center">
+    <div class="card">
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:space-between; gap:10px;">
+      <div id="shortGoal"></div>
+      <div id="privacyNote"></div>
+      <div class="muted" id="exampleTitle"></div>
+      <pre id="example" class="mono-box">[
+  {
+    "id": "AKusa1",
+    "title": "Trip to Alps",
+    "mediaItemsCount": 42,
+    "items": [
+      {
+        "id": "MiD-001",
+        "filename": "IMG_0001.JPG",
+        "mimeType": "image/jpeg",
+        "baseUrl": "https://photos.google.com/...",
+        "metadata": {
+          "creationTime": "2023-06-01T10:20:30Z"
+        }
+      }
+    ]
+  }
+]</pre>
+     </div>
+      <ul id="list" class="list"></ul>
+      <div id="spinner" class="spinner" style="display:none;" title=""></div>
+    </div>
+    <div id="loadingStatus" class="muted"></div>
+
+    <div class="actions">
+      <button id="signinBtn" class="btn" title="" ></button>
+      <button id="exportBtn" class="btn secondary" style="display:none;"></button>
+      <button id="downloadBtn" class="btn secondary" disabled style="display:none;"></button>
+    </div>
+  </main>
+  <script src="static/script.js"></script>
+</body>
+</html>
