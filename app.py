@@ -10,7 +10,7 @@ from fastapi.responses import (
     RedirectResponse,
     JSONResponse,
     StreamingResponse,
-    HTMLResponse,
+    FileResponse,
 )
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -42,11 +42,9 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-@app.get("/", response_class=HTMLResponse)
-async def read_index():
-    with open("index.html", "r", encoding="utf-8") as file:
-        html_content = file.read()
-    return html_content
+@app.get("/")
+async def index():
+    return FileResponse("index.html")
 
 
 def set_sid_cookie(resp, sid: str):
