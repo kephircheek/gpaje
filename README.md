@@ -1,1 +1,1 @@
-# Google Photo Albums JSON Exporter
+# Google Photos Albums JSON Exporter
